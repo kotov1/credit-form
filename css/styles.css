@@ -1,0 +1,530 @@
+/*FONTS */
+@font-face {
+  font-family: "KievitPro-Regular";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/KievitPro-Regular/KievitPro-Regular.eot");
+  src: local("KievitPro-Regular"), url("../fonts/KievitPro-Regular/KievitPro-Regular.woff2") format("woff2"), url("../fonts/KievitPro-Regular/KievitPro-Regular.woff") format("woff"), url("../fonts/KievitPro-Regular/KievitPro-Regular.ttf") format("truetype"), url("../fonts/KievitPro-Regular/KievitPro-Regular.svg#KievitPro-Regular") format("svg");
+}
+@font-face {
+  font-family: "KievitPro-Medium";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/KievitPro-Medium/KievitPro-Medium.eot");
+  src: local("KievitPro-Medium"), url("../fonts/KievitPro-Medium/KievitPro-Medium.woff2") format("woff2"), url("../fonts/KievitPro-Medium/KievitPro-Medium.woff") format("woff"), url("../fonts/KievitPro-Medium/KievitPro-Medium.ttf") format("truetype"), url("../fonts/KievitPro-Medium/KievitPro-Medium.svg#KievitPro-Medium") format("svg");
+}
+@font-face {
+  font-family: "KievitPro-Book";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/KievitPro-Book/KievitPro-Book.eot");
+  src: local("KievitPro-Book"), url("../fonts/KievitPro-Book/KievitPro-Book.woff2") format("woff2"), url("../fonts/KievitPro-Book/KievitPro-Book.woff") format("woff"), url("../fonts/KievitPro-Book/KievitPro-Book.ttf") format("truetype"), url("../fonts/KievitPro-Book/KievitPro-Book.svg#KievitPro-Book") format("svg");
+}
+@font-face {
+  font-family: "KievitPro-Bold";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/KievitPro-Bold/KievitPro-Bold.eot");
+  src: local("KievitPro-Bold"), url("../fonts/KievitPro-Bold/KievitPro-Bold.woff2") format("woff2"), url("../fonts/KievitPro-Bold/KievitPro-Bold.woff") format("woff"), url("../fonts/KievitPro-Bold/KievitPro-Bold.ttf") format("truetype"), url("../fonts/KievitPro-Bold/KievitPro-Bold.svg#KievitPro-Bold") format("svg");
+}
+@font-face {
+  font-family: "KievitPro-Black";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/KievitPro-Black/KievitPro-Black.eot");
+  src: local("KievitPro-Black"), url("../fonts/KievitPro-Black/KievitPro-Black.woff2") format("woff2"), url("../fonts/KievitPro-Black/KievitPro-Black.woff") format("woff"), url("../fonts/KievitPro-Black/KievitPro-Black.ttf") format("truetype"), url("../fonts/KievitPro-Black/KievitPro-Black.svg#KievitPro-Black") format("svg");
+}
+@font-face {
+  font-family: "KievitPro-ExtraBold";
+  font-weight: bold;
+  font-style: normal;
+  src: url("../fonts/KievitPro-ExtraBold/KievitPro-ExtraBold.eot");
+  src: local("KievitPro-ExtraBold"), url("../fonts/KievitPro-ExtraBold/KievitPro-ExtraBold.woff2") format("woff2"), url("../fonts/KievitPro-ExtraBold/KievitPro-ExtraBold.woff") format("woff"), url("../fonts/KievitPro-ExtraBold/KievitPro-ExtraBold.ttf") format("truetype"), url("../fonts/KievitPro-ExtraBold/KievitPro-ExtraBold.svg#KievitPro-ExtraBold") format("svg");
+}
+/*FONTS END */
+/*GENERAL STYLES */
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::-webkit-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*::-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+*:-ms-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  color: #666;
+}
+
+body input:required:valid,
+body textarea:required:valid {
+  color: #666;
+}
+
+body {
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
+  position: relative;
+  font: 16px/1.4 "KievitPro-Medium", sans-serif;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
+::-moz-selection {
+  background-color: #9eb237;
+  color: #fff;
+}
+
+::selection {
+  background-color: #9eb237;
+  color: #fff;
+}
+
+.clearfix::before, .clearfix::after {
+  content: " ";
+  display: table;
+}
+.clearfix::after {
+  clear: both;
+}
+
+.item {
+  float: left;
+}
+
+span.fix-render {
+  font-size: 1.35em;
+  line-height: 0;
+}
+
+/*GENERAL STYLES END */
+/*STYLES START */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+.container::before, .container::after {
+  content: " ";
+  display: table;
+}
+.container::after {
+  clear: both;
+}
+
+/* HEADER STYLES START */
+.header {
+  padding-top: 34px;
+}
+.header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header-item1 {
+  width: 39%;
+}
+.header-item2 {
+  width: 61%;
+}
+.header-logo-text {
+  display: block;
+  font: 2.5rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  text-transform: uppercase;
+  color: #9eb237;
+}
+.header-logo-descr {
+  display: block;
+  font: 1rem "KievitPro-Medium", sans-serif;
+  color: #9a9a9a;
+}
+.header-nav-links {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.header-nav-link {
+  display: block;
+  font: 1.125rem "KievitPro-Bold", "KievitPro-Medium", sans-serif;
+  color: #222222;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.header-nav-link:hover {
+  color: #b2c747;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@supports (-webkit-background-clip: text) {
+  .header-logo-text {
+    background-image: -webkit-gradient(linear, left top, right top, from(#cee45b), to(#9eb237));
+    background-image: linear-gradient(90deg, #cee45b, #9eb237);
+    background-position: 0 3px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .header-logo-text::-moz-selection {
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #fff;
+  }
+  .header-logo-text::selection {
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: #fff;
+  }
+}
+/* HEADER STYLES END */
+/* SECTION INTRO STYLES START */
+.intro {
+  position: relative;
+  margin-top: 20px;
+  padding: 100px 0 118px;
+  background: url("../img/top-bg2.png") no-repeat 50% 0;
+}
+.intro::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 77px;
+  position: absolute;
+  left: 0;
+  top: -28px;
+  background: url("../img/line.png") no-repeat 0 0;
+  z-index: 0;
+}
+.intro-block {
+  max-width: 55%;
+  padding: 0.4rem 2.5rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+.intro-title {
+  font: 2.875rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  text-transform: uppercase;
+  color: #222222;
+}
+.intro-title-accent {
+  color: #9eb237;
+}
+.intro-text {
+  margin-bottom: 2rem;
+  font: 1rem "KievitPro-Regular", "KievitPro-Medium", sans-serif;
+  color: #323232;
+}
+.intro-text-accent {
+  color: #121212;
+  font-family: "KievitPro-Medium", sans-serif;
+}
+.intro-call {
+  width: 148px;
+  height: 148px;
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.44);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.44);
+  border-radius: 50%;
+  background-image: linear-gradient(4deg, #cee45b, #9eb237);
+  position: absolute;
+  bottom: 66px;
+  right: 8%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.intro-call:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.intro-call:active {
+  -webkit-transform: scale(1.05) translate(3px, 3px);
+          transform: scale(1.05) translate(3px, 3px);
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+}
+.intro-call-inner {
+  display: table;
+  width: 134px;
+  height: 134px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.44);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.44);
+}
+.intro-call-text {
+  display: table-cell;
+  vertical-align: middle;
+  font: 1.125rem/1.6 "KievitPro-ExtraBold", "KievitPro-Medium", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* SECTION INTRO STYLES END */
+/* SECTION HOW STYLES START */
+.how {
+  padding: 25px 0 50px;
+  background: #9eb237 -webkit-gradient(linear, left top, right top, from(#cee45b), to(#9eb237));
+  background: #9eb237 linear-gradient(90deg, #cee45b, #9eb237);
+  color: #fff;
+  text-transform: uppercase;
+}
+.how-item1 {
+  width: 62%;
+}
+.how-title {
+  font: 2.875rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  text-align: center;
+}
+.how-list {
+  margin-top: 62px;
+  padding: 0;
+  font-size: 0;
+  text-align: center;
+}
+.how-list-item {
+  display: inline-block;
+  width: 32.5%;
+  min-height: 211px;
+  margin: 0 auto 15px;
+  font-size: 1rem;
+  vertical-align: top;
+}
+.how-list-item-img {
+  width: 127px;
+  height: 127px;
+  margin: 0 auto;
+  border: 2px dashed #fff;
+  border-radius: 50%;
+  position: relative;
+}
+.how-list-item-img::before {
+  content: "";
+  display: block;
+  width: 57px;
+  height: 57px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url("../img/icon-sprite.png") no-repeat;
+  z-index: 0;
+}
+.how-list-item-img-1::before {
+  background-position: 8px 50%;
+}
+.how-list-item-img-2::before {
+  background-position: -49px 50%;
+}
+.how-list-item-img-3::before {
+  background-position: -106px 50%;
+}
+.how-list-item-img-4::before {
+  background-position: -167px 50%;
+}
+.how-list-item-img-5::before {
+  background-position: -232px 50%;
+}
+.how-list-item-text {
+  min-height: 51px;
+  margin-top: 30px;
+  font-family: "KievitPro-Bold", "KievitPro-Medium", sans-serif;
+}
+.how-text {
+  font-size: 0.875rem;
+  line-height: 1.3;
+  text-align: center;
+}
+.how-item2 {
+  width: 31%;
+  margin-left: 7%;
+}
+.how-img-wrap {
+  margin: 50px auto 0;
+  width: 361px;
+  height: 454px;
+  text-align: center;
+}
+.how-img-text {
+  max-width: 72%;
+  margin: 17px auto 0;
+}
+.how-img-text-title {
+  font: 1.125rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+.how-img-text-descr {
+  margin: 5px 0 0 0;
+  line-height: 1.5;
+  font-family: "KievitPro-Medium", sans-serif;
+}
+
+/* SECTION HOW STYLES END */
+/* SECTION FEEDBACKS STYLES START */
+.feedbacks {
+  padding: 40px 0;
+  position: relative;
+}
+.feedbacks::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 77px;
+  position: absolute;
+  left: 0;
+  bottom: -28px;
+  background: url("../img/line.png") no-repeat 0 0;
+  z-index: 0;
+}
+.feedbacks-title {
+  font: 2.875rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  text-align: center;
+  color: #222222;
+  text-transform: uppercase;
+}
+.feedbacks-item {
+  width: 46%;
+  margin-bottom: 2rem;
+}
+.feedbacks-item:nth-child(2n) {
+  margin-left: 7%;
+}
+.feedbacks-item-img {
+  width: 131px;
+  height: 131px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #9eb237;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.feedbacks-item-content {
+  width: 66%;
+  margin-left: 8%;
+  padding-top: 0.5rem;
+}
+.feedbacks-item-title {
+  font: 1.125rem/1.5 "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  color: #bbd04d;
+  text-transform: uppercase;
+}
+.feedbacks-item-name {
+  margin-top: 0.9rem;
+  font: 0.875rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  color: #222222;
+  text-transform: uppercase;
+}
+.feedbacks-item-text {
+  margin-top: 0.6rem;
+  font: 0.9375rem "KievitPro-Medium", sans-serif;
+  color: #222222;
+}
+
+/* SECTION FEEDBACKS STYLES END */
+/* FOOTER STYLES START */
+.footer {
+  padding: 3.5rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.footer-info {
+  font: 0.75rem "KievitPro-Medium", sans-serif;
+  color: #121212;
+}
+
+.copy {
+  font: 0.75rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  color: #222222;
+}
+
+.company-data {
+  margin-bottom: 0.5rem;
+}
+
+.company-address {
+  font-style: normal;
+}
+
+/* FOOTER STYLES END */
+/*STYLES END */
+/* MEDIA STYLES START */
+@media only screen and (max-width: 1199px) {
+  /* */
+}
+@media only screen and (max-width: 991px) {
+  /* */
+}
+@media only screen and (max-width: 767px) {
+  /* */
+}
+@media only screen and (max-width: 575px) {
+  /* */
+}
+@media only screen and (max-width: 480px) {
+  /* */
+}
+@media only screen and (max-width: 320px) {
+  /* */
+}
+/* MEDIA STYLES END */
