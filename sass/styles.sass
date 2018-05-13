@@ -15,27 +15,27 @@
 		box-sizing: border-box
 
 *::-webkit-input-placeholder
-	color: #666
+	color: $sub-color
 	opacity: 1
 
 *:-moz-placeholder
-	color: #666
+	color: $sub-color
 	opacity: 1
 
 *::-moz-placeholder
-	color: #666
+	color: $sub-color
 	opacity: 1
 
 *:-ms-input-placeholder
-	color: #666
+	color: $sub-color
 	opacity: 1
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
-	color: #666
+	color: $sub-color
 body input:required:valid,
 body textarea:required:valid
-	color: #666
+	color: $sub-color
 
 // html, body
 // 	height: 100%
@@ -64,6 +64,9 @@ body
 	background-color: $accent-color
 	color: #fff
 
+.hidden
+	visibility: hidden
+
 .clearfix
 	&::before, &::after
 		content: ' '
@@ -78,6 +81,72 @@ body
 span.fix-render
 	font-size: 1.35em 
 	line-height: 0
+
+
+.checkbox 
+	cursor: pointer
+	vertical-align: top
+	font-size: 0
+
+	.checkbox-hidden
+		display: none
+
+	.checkbox-wrap
+		display: inline-block
+		vertical-align: middle
+		width: 26px
+		height: 26px
+		box-sizing: border-box
+		flex: 0 0 26px
+
+	.checkbox-pseudo
+		display: block
+		width: 100%
+		height: 100%
+		border-radius: 4px
+		border: 2px solid rgba($sub-color, .3)
+		box-sizing: border-box
+		background-color: #fff
+		position: relative
+		transition: background .2s ease-out,border .2s ease-out
+
+	.checkbox-check 
+		position: absolute
+		top: 5px
+		left: 4px
+		stroke: #fff
+		stroke-dasharray: 19px
+		stroke-dashoffset: 19px
+		transition: .2s ease-out
+
+	.checkbox-text
+		display: inline-block
+		vertical-align: middle
+		color: #000
+		font-family: $regular-font-family
+		font-size: 17px
+		font-weight: 500
+		line-height: 24px
+		margin-left: 15px
+		a 
+			color: $accent-color
+			text-decoration: underline
+			&:hover
+				text-decoration: none
+
+.checkbox 
+	input[type=checkbox]
+		&:checked
+			+ .checkbox-wrap
+				.checkbox-pseudo
+					.checkbox-check
+						stroke-dashoffset: 38px
+
+.cd-checkbox
+	&:hover 
+		.checkbox-text
+			color: #199b40
+
 /*GENERAL STYLES END*/
 
 
@@ -152,7 +221,7 @@ span.fix-render
 	position: relative
 	margin-top: 20px
 	padding: 100px 0 118px
-	background: url('../img/top-bg2.png') no-repeat 50% 0
+	background: url('../img/top-bg.png') no-repeat 50% 0
 	&::before
 		content: ''
 		display: block
@@ -216,6 +285,331 @@ span.fix-render
 			text-transform: uppercase
 			text-align: center
 /* SECTION INTRO STYLES END */
+
+
+
+
+/* BLOCK FORM STYLES START */
+.form
+	&-range
+		padding: 3rem 0 4.5rem
+		position: relative
+		&::before
+			content: ''
+			display: block
+			width: 100%
+			height: 29px
+			position: absolute
+			left: 0
+			bottom: 0
+			background: url('../img/cursive-line.png') no-repeat 0 0
+			z-index: 0
+		&-title
+			display: inline-block
+			width: 25%
+			font: 1.625rem $black-font-family
+			color: $sub-color
+			text-transform: uppercase
+
+		&-inner
+			display: flex
+			align-items: center
+
+		&-label
+			position: relative
+			display: inline-block
+			width: 50%
+			height: 50px
+			margin: 0 50px
+			text-align: center
+		&-line
+			position: relative
+			width: 100%
+			height: 11px
+			border-radius: 30px
+			background-color: #f0f0f0
+			&-quantity
+				width: 0
+				height: 11px
+				position: absolute
+				left: 0
+				top: 0
+				background: $accent-color
+				border-top-left-radius: 30px
+				border-bottom-left-radius: 30px
+			span
+				position: absolute
+				left: 0
+				transform: translateX(-50%)
+				top: -4px
+				display: inline-block
+				width: 20px
+				height: 20px
+				background-color: $sub-color
+				border-radius: 50%
+				outline: none
+				cursor: move
+		&-input
+			display: inline-block
+			padding: 3px
+			margin: 0 5px 0 0
+			width: 120px
+			border: none
+			font: 1.5rem $bold-font-family
+			text-align: center
+			outline: none
+			box-shadow: 0 2px 5px rgba(0,0,0, 0.1)
+
+		&-min, &-val, &-max
+			position: absolute
+			bottom: -10px
+			font: 1rem $bold-font-family
+			.fix-render
+				font: 1.5em $black-font-family
+		&-min, &-max
+			color: $accent-color
+		&-min
+			left: 0
+		&-max
+			right: 0
+		&-val
+			left: 50%
+			transform: translateX(-50%)
+			color: $sub-color
+
+	&-period-select
+		width: 20%
+		margin-left: 3%
+
+	.my-select-wrapper
+		width: 100%
+		position: relative
+		user-select: none
+		border: 2px solid #d3dca5
+		border-radius: 5px
+		select
+			display: none
+
+	.my-select
+		position: relative
+
+	.my-select-trigger
+		position: relative
+		height: 47px
+		display: flex
+		align-items: center
+		padding: 0 40px 0 15px
+		font: 20px $book-font-family
+		line-height: 47px
+		background: #fff
+		color: $accent-color
+		border-top-left-radius: 4px
+		border-bottom-left-radius: 4px
+		cursor: pointer
+		&:focus,&:active
+			box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(#000,.15)
+		&:after
+			position: absolute
+			display: block
+			content: ''
+			width: 10px
+			height: 10px
+			top: 50%
+			right: 25px
+			margin-top: -3px
+			border-bottom: 3px solid rgba($sub-color, .3)
+			border-right: 3px solid rgba($sub-color, .3)
+			transform: rotate(45deg) translateY(-50%)
+			transition: all .2s ease-in-out
+			transform-origin: 50% 0
+
+	.my-select.opened
+		.my-select-trigger:after
+			margin-top: 3px
+			transform: rotate(-135deg) translateY(-50%)
+			border-bottom: 3px solid rgba($sub-color, .3)
+			border-right: 3px solid rgba($sub-color, .3)
+
+	.my-options
+		position: absolute
+		display: block
+		height: 300px
+		overflow-y: auto
+		top: 100%
+		left: 0
+		right: 0
+		min-width: 100%
+		margin: 15px 0
+		border: 1px solid $accent-color
+		border-radius: 4px
+		background: #fff
+		transition: all .2s ease-in-out
+		opacity: 0
+		visibility: hidden
+		pointer-events: none
+		transform: translateY(-15px)
+		z-index: 1
+
+	.my-select.opened
+		.my-options
+			opacity: 1
+			visibility: visible
+			pointer-events: all
+			transform: translateY(0)
+
+	.my-option
+		position: relative
+		display: block
+		padding: 10px 30px
+		border-bottom: 1px solid $accent-color
+		font: 16px $book-font-family
+		color: $accent-color
+		cursor: pointer
+		transition: all .2s ease-in-out
+		&:first-of-type
+			border-radius: 4px 4px 0 0
+		&:last-of-type
+			border-bottom: 0
+			border-radius: 0 0 4px 4px
+		&:hover, &.selection
+			background: rgba($accent-color,.1)
+
+	&-block
+		max-width: 905px
+		min-height: 730px
+		margin: 0 auto
+		padding: 50px 0
+		.item
+			padding: 0 15px
+		.my-select-wrapper
+			margin-top: 10px
+			border-color: rgba($sub-color, .3)
+		.my-select-trigger
+			height: 44px
+			line-height: 44px
+			color: $sub-color
+			text-transform: uppercase
+			
+		&-row
+			margin-left: -15px
+			margin-right: -15px
+			margin-bottom: 25px
+			&.mb-0
+				margin-bottom: 0
+		&-item
+			width: 100%
+			padding: 0 15px
+		&-item4
+			width: 33%
+		&-item8
+			width: 66%
+
+		&-label
+			font: 18px $regular-font-family
+			color: #000
+				
+		&-required
+			color: #e82e2e
+		&-input
+			display: inline-block
+			width: 100%
+			height: 44px
+			margin-top: 10px
+			padding: 0 15px
+			border-radius: 5px
+			border: 2px solid rgba($sub-color, .3)
+			font: 20px $book-font-family
+			&:focus
+				outline: none
+				border: 2px solid rgba($accent-color, .5)
+		&-docs
+			height: 44px
+			margin-top: 10px
+			display: flex
+			align-items: center
+		&-doc2
+			margin-left: 50px
+
+		&-button
+			position: relative
+			display: block
+			width: 200px
+			height: 44px
+			margin-top: 10px
+			text-align: center
+			font: 14px $exbold-font-family
+			color: $accent-color
+			background-color: #fff
+			text-transform: uppercase
+			border: 2px solid $accent-color
+			border-radius: 5px
+			outline: none
+			&:hover
+				cursor: pointer
+			&:active
+				transform: translate(1px, 1px)
+				background-color: #fff
+				
+			
+@supports (-webkit-background-clip: text)
+	.form-block-button
+		border: 2px solid transparent
+		background-clip: padding-box
+		&::before
+			content: ''
+			position: absolute
+			top: -2px
+			bottom: -2px
+			left: -2px
+			right: -2px
+			background: $accent-gradient
+			z-index: -1
+			border-radius: 5px
+			transition: all .5s
+		&:hover
+			&::before
+				background-position: 200px 0
+				transition: all .5s
+		&:active
+			color: #fff
+
+.input-code-info
+	font: 14px $book-font-family
+#input-code
+	display: none
+.form
+	.form-sub-color
+		color: rgba($sub-color, .5)
+
+.form-submit-wrap
+	text-align: center
+.form-submit
+	display: inline-block
+	width: 262px
+	padding: 20px 0
+	font: 18px $exbold-font-family
+	text-transform: uppercase
+	text-align: center
+	color: #fff
+	background: $accent-gradient
+	border-radius: 5px
+	border: none
+	outline: none
+	box-shadow: 0 -4px 15px 0.15px rgba(20, 163, 243, 0.16)
+	transition: all .3s
+	&:hover
+		cursor: pointer
+		background: linear-gradient(270deg, #cee45b, #9eb237)
+		transition: all .3s
+	&:active
+		transform: translate(1px, 1px)
+	&:focus
+		box-shadow: 0 0px 6px 2px rgba($accent-color, .6)
+
+/* BLOCK FORM STYLES END */
+
+
+
 
 
 

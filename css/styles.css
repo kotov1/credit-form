@@ -53,33 +53,33 @@
 }
 
 *::-webkit-input-placeholder {
-  color: #666;
+  color: #222222;
   opacity: 1;
 }
 
 *:-moz-placeholder {
-  color: #666;
+  color: #222222;
   opacity: 1;
 }
 
 *::-moz-placeholder {
-  color: #666;
+  color: #222222;
   opacity: 1;
 }
 
 *:-ms-input-placeholder {
-  color: #666;
+  color: #222222;
   opacity: 1;
 }
 
 body input:focus:required:invalid,
 body textarea:focus:required:invalid {
-  color: #666;
+  color: #222222;
 }
 
 body input:required:valid,
 body textarea:required:valid {
-  color: #666;
+  color: #222222;
 }
 
 body {
@@ -116,6 +116,10 @@ body {
   color: #fff;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .clearfix::before, .clearfix::after {
   content: " ";
   display: table;
@@ -131,6 +135,74 @@ body {
 span.fix-render {
   font-size: 1.35em;
   line-height: 0;
+}
+
+.checkbox {
+  cursor: pointer;
+  vertical-align: top;
+  font-size: 0;
+}
+.checkbox .checkbox-hidden {
+  display: none;
+}
+.checkbox .checkbox-wrap {
+  display: inline-block;
+  vertical-align: middle;
+  width: 26px;
+  height: 26px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 26px;
+          flex: 0 0 26px;
+}
+.checkbox .checkbox-pseudo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 2px solid rgba(34, 34, 34, 0.3);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  position: relative;
+  -webkit-transition: background 0.2s ease-out, border 0.2s ease-out;
+  transition: background 0.2s ease-out, border 0.2s ease-out;
+}
+.checkbox .checkbox-check {
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  stroke: #fff;
+  stroke-dasharray: 19px;
+  stroke-dashoffset: 19px;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+.checkbox .checkbox-text {
+  display: inline-block;
+  vertical-align: middle;
+  color: #000;
+  font-family: "KievitPro-Regular", "KievitPro-Medium", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-left: 15px;
+}
+.checkbox .checkbox-text a {
+  color: #9eb237;
+  text-decoration: underline;
+}
+.checkbox .checkbox-text a:hover {
+  text-decoration: none;
+}
+
+.checkbox input[type=checkbox]:checked + .checkbox-wrap .checkbox-pseudo .checkbox-check {
+  stroke-dashoffset: 38px;
+}
+
+.cd-checkbox:hover .checkbox-text {
+  color: #199b40;
 }
 
 /*GENERAL STYLES END */
@@ -228,7 +300,7 @@ span.fix-render {
   position: relative;
   margin-top: 20px;
   padding: 100px 0 118px;
-  background: url("../img/top-bg2.png") no-repeat 50% 0;
+  background: url("../img/top-bg.png") no-repeat 50% 0;
 }
 .intro::before {
   content: "";
@@ -312,6 +384,402 @@ span.fix-render {
 }
 
 /* SECTION INTRO STYLES END */
+/* BLOCK FORM STYLES START */
+.form-range {
+  padding: 3rem 0 4.5rem;
+  position: relative;
+}
+.form-range::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 29px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: url("../img/cursive-line.png") no-repeat 0 0;
+  z-index: 0;
+}
+.form-range-title {
+  display: inline-block;
+  width: 25%;
+  font: 1.625rem "KievitPro-Black", "KievitPro-Medium", sans-serif;
+  color: #222222;
+  text-transform: uppercase;
+}
+.form-range-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form-range-label {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  height: 50px;
+  margin: 0 50px;
+  text-align: center;
+}
+.form-range-line {
+  position: relative;
+  width: 100%;
+  height: 11px;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+}
+.form-range-line-quantity {
+  width: 0;
+  height: 11px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #9eb237;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.form-range-line span {
+  position: absolute;
+  left: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: -4px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #222222;
+  border-radius: 50%;
+  outline: none;
+  cursor: move;
+}
+.form-range-input {
+  display: inline-block;
+  padding: 3px;
+  margin: 0 5px 0 0;
+  width: 120px;
+  border: none;
+  font: 1.5rem "KievitPro-Bold", "KievitPro-Medium", sans-serif;
+  text-align: center;
+  outline: none;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.form-range-min, .form-range-val, .form-range-max {
+  position: absolute;
+  bottom: -10px;
+  font: 1rem "KievitPro-Bold", "KievitPro-Medium", sans-serif;
+}
+.form-range-min .fix-render, .form-range-val .fix-render, .form-range-max .fix-render {
+  font: 1.5em "KievitPro-Black", "KievitPro-Medium", sans-serif;
+}
+.form-range-min, .form-range-max {
+  color: #9eb237;
+}
+.form-range-min {
+  left: 0;
+}
+.form-range-max {
+  right: 0;
+}
+.form-range-val {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #222222;
+}
+.form-period-select {
+  width: 20%;
+  margin-left: 3%;
+}
+.form .my-select-wrapper {
+  width: 100%;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: 2px solid #d3dca5;
+  border-radius: 5px;
+}
+.form .my-select-wrapper select {
+  display: none;
+}
+.form .my-select {
+  position: relative;
+}
+.form .my-select-trigger {
+  position: relative;
+  height: 47px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 40px 0 15px;
+  font: 20px "KievitPro-Book", "KievitPro-Medium", sans-serif;
+  line-height: 47px;
+  background: #fff;
+  color: #9eb237;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  cursor: pointer;
+}
+.form .my-select-trigger:focus, .form .my-select-trigger:active {
+  -webkit-box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.1), inset 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.form .my-select-trigger:after {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  right: 25px;
+  margin-top: -3px;
+  border-bottom: 3px solid rgba(34, 34, 34, 0.3);
+  border-right: 3px solid rgba(34, 34, 34, 0.3);
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+}
+.form .my-select.opened .my-select-trigger:after {
+  margin-top: 3px;
+  -webkit-transform: rotate(-135deg) translateY(-50%);
+          transform: rotate(-135deg) translateY(-50%);
+  border-bottom: 3px solid rgba(34, 34, 34, 0.3);
+  border-right: 3px solid rgba(34, 34, 34, 0.3);
+}
+.form .my-options {
+  position: absolute;
+  display: block;
+  height: 300px;
+  overflow-y: auto;
+  top: 100%;
+  left: 0;
+  right: 0;
+  min-width: 100%;
+  margin: 15px 0;
+  border: 1px solid #9eb237;
+  border-radius: 4px;
+  background: #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+  z-index: 1;
+}
+.form .my-select.opened .my-options {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+.form .my-option {
+  position: relative;
+  display: block;
+  padding: 10px 30px;
+  border-bottom: 1px solid #9eb237;
+  font: 16px "KievitPro-Book", "KievitPro-Medium", sans-serif;
+  color: #9eb237;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.form .my-option:first-of-type {
+  border-radius: 4px 4px 0 0;
+}
+.form .my-option:last-of-type {
+  border-bottom: 0;
+  border-radius: 0 0 4px 4px;
+}
+.form .my-option:hover, .form .my-option.selection {
+  background: rgba(158, 178, 55, 0.1);
+}
+.form-block {
+  max-width: 905px;
+  min-height: 730px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+.form-block .item {
+  padding: 0 15px;
+}
+.form-block .my-select-wrapper {
+  margin-top: 10px;
+  border-color: rgba(34, 34, 34, 0.3);
+}
+.form-block .my-select-trigger {
+  height: 44px;
+  line-height: 44px;
+  color: #222222;
+  text-transform: uppercase;
+}
+.form-block-row {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 25px;
+}
+.form-block-row.mb-0 {
+  margin-bottom: 0;
+}
+.form-block-item {
+  width: 100%;
+  padding: 0 15px;
+}
+.form-block-item4 {
+  width: 33%;
+}
+.form-block-item8 {
+  width: 66%;
+}
+.form-block-label {
+  font: 18px "KievitPro-Regular", "KievitPro-Medium", sans-serif;
+  color: #000;
+}
+.form-block-required {
+  color: #e82e2e;
+}
+.form-block-input {
+  display: inline-block;
+  width: 100%;
+  height: 44px;
+  margin-top: 10px;
+  padding: 0 15px;
+  border-radius: 5px;
+  border: 2px solid rgba(34, 34, 34, 0.3);
+  font: 20px "KievitPro-Book", "KievitPro-Medium", sans-serif;
+}
+.form-block-input:focus {
+  outline: none;
+  border: 2px solid rgba(158, 178, 55, 0.5);
+}
+.form-block-docs {
+  height: 44px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form-block-doc2 {
+  margin-left: 50px;
+}
+.form-block-button {
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 44px;
+  margin-top: 10px;
+  text-align: center;
+  font: 14px "KievitPro-ExtraBold", "KievitPro-Medium", sans-serif;
+  color: #9eb237;
+  background-color: #fff;
+  text-transform: uppercase;
+  border: 2px solid #9eb237;
+  border-radius: 5px;
+  outline: none;
+}
+.form-block-button:hover {
+  cursor: pointer;
+}
+.form-block-button:active {
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+  background-color: #fff;
+}
+
+@supports (-webkit-background-clip: text) {
+  .form-block-button {
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  .form-block-button::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    background: -webkit-gradient(linear, left top, right top, from(#cee45b), to(#9eb237));
+    background: linear-gradient(90deg, #cee45b, #9eb237);
+    z-index: -1;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .form-block-button:hover::before {
+    background-position: 200px 0;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+  .form-block-button:active {
+    color: #fff;
+  }
+}
+.input-code-info {
+  font: 14px "KievitPro-Book", "KievitPro-Medium", sans-serif;
+}
+
+#input-code {
+  display: none;
+}
+
+.form .form-sub-color {
+  color: rgba(34, 34, 34, 0.5);
+}
+
+.form-submit-wrap {
+  text-align: center;
+}
+
+.form-submit {
+  display: inline-block;
+  width: 262px;
+  padding: 20px 0;
+  font: 18px "KievitPro-ExtraBold", "KievitPro-Medium", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(#cee45b), to(#9eb237));
+  background: linear-gradient(90deg, #cee45b, #9eb237);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  -webkit-box-shadow: 0 -4px 15px 0.15px rgba(20, 163, 243, 0.16);
+          box-shadow: 0 -4px 15px 0.15px rgba(20, 163, 243, 0.16);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form-submit:hover {
+  cursor: pointer;
+  background: -webkit-gradient(linear, right top, left top, from(#cee45b), to(#9eb237));
+  background: linear-gradient(270deg, #cee45b, #9eb237);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form-submit:active {
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+.form-submit:focus {
+  -webkit-box-shadow: 0 0px 6px 2px rgba(158, 178, 55, 0.6);
+          box-shadow: 0 0px 6px 2px rgba(158, 178, 55, 0.6);
+}
+
+/* BLOCK FORM STYLES END */
 /* SECTION HOW STYLES START */
 .how {
   padding: 25px 0 50px;
