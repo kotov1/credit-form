@@ -2,32 +2,400 @@
 
 
 @media only screen and (max-width : 1199px)
+	
+	.x
+		display: none
+		
 
+	// NAVIGATION MEDIA STYLES START 
+	.header
+		&-nav
+			transition: all .25s
+			position: fixed
+			top: -36px
+			right: -36px
+			height: 36px
+			width: 36px
+			z-index: 100
+			cursor: pointer
+
+			&-links
+				flex-direction: column
+				transition: all 0s
+				position: fixed
+				right: -9000px
+
+			&-bar
+				position: fixed
+				top: 67px
+				right: 15px
+				transition: all .25s
+				height: 3px
+				width: 30px
+				border-radius: 15px
+				background-color: #000
+				z-index: 10
+				&::before, &::after  
+					transition: all .25s
+					content: ""
+					position: absolute
+					left: 0
+					height: 3px
+					width: 30px
+					border-radius: 15px
+					background-color: #000
+					top: -8px
+				&::before
+					top: -8px
+				&::after 
+					top: 8px
+	
+		&-nav-expanded
+			transition: all .25s
+			text-align: center
+			line-height: 2em
+			height: 100%
+			width: 75%
+			border-radius: 0px
+			position: fixed
+			right: 0
+			top: 0
+			background-color: #fff
+			box-shadow: 5px 0 20px 0px rgba($accent-color, .5)
+			overflow-y: auto
+			overflow-x: hidden
+			.header-nav-links
+				padding: 0 10px
+				text-align: center
+				transition: all .1s
+				position: relative
+				right: 0
+				z-index: 2
+				padding-top: 100px
+			.header-nav-link
+				display: block
+				max-width: 320px
+				margin: 0 auto
+				padding: 1rem 0 .9rem
+				text-decoration: none
+				color: #000
+				font-size: 1em
+				border-bottom: 1px solid $accent-color
+				transition: all .15s
+				&:hover 
+					background-color: $accent-color
+					text-decoration: none
+					transition: all .15s
+			li
+				&:first-child
+					.header-nav-link
+						border-top: 1px solid $accent-color
+			.header-nav-bar 
+				background-color: transparent
+				transition: all .25s
+				&:before 
+					transition: all .25s
+					top: 0
+					transform: rotate(45deg)
+				&:after 
+					transition: all .25s
+					top: -0px
+					transform: rotate(-45deg)
+	// NAVIGATION MEDIA STYLES END 
+
+
+	.header
+		&-item1
+			width: 100%
+			float: none
+		&-item2
+			width: 0
+		&-logo
+			text-align: center
+
+
+	.intro
+		background-position: 100% 0
+		&::before
+			top: -44px
+		&-block
+			max-width: 85%
+			margin: 0 auto
+		&-call
+			right: 1%
+			bottom: 5px
+
+
+	.form-block
+		max-width: 100%
+	.form .my-select-trigger
+		font-size: 18px
+
+
+
+	.how-item1, .how-item2
+		float: none
+		width: 100%
+		position: static
+	.how-item2
+		margin: 50px 0
+	.how-title
+		width: 100%
+	.how-img-wrap
+		height: auto
+
+
+
+	.feedbacks-item-img
+		float: none
+		margin: 0 auto
+	.feedbacks-item-content
+		width: 100%
+		text-align: center
+		margin: 0
+		padding-top: 1rem
+		float: none
+
+
+	@supports (-webkit-background-clip: text)
+		.form-block-button
+			&:hover
+				&::before
+					background-position: 0 0
 	/**/
 
 
 
 @media only screen and (max-width : 991px)
 
+	.intro
+		&-block
+			max-width: 100%
+		&-call
+			transform: scale(.8)
+			&:hover
+				transform: scale(.8)
+			&:active
+				transform: scale(.8) translate(2px, 2px)
+
+
+	.form
+		&-range
+			&-inner
+				display: block
+			&-title
+				display: block
+				width: 100%
+				text-align: center
+			&-label
+				display: block
+				width: 100%
+				max-width: 400px
+				margin: 30px auto 40px
+
+		&-period-select
+			width: 100%
+			max-width: 400px
+			margin: 0 auto
+
+		&-block-md-item6
+			width: 50%
+
+		&-submit-wrap
+			margin-top: 30px
+
+
+	.input-code
+		margin-bottom: 20px
+	.md-fl-none
+		float: none
+		clear: both
+	.text-md-center
+		text-align: center
+	.mb-md-0
+		margin-bottom: 0
+
+
+		
 	/**/
 
 
 
 @media only screen and (max-width : 767px)
 
+
+	.header
+		padding-top: 50px
+
+	.intro
+		margin-top: 35px
+		padding: 70px 0
+		background-position: 73% 0
+		background-size: cover
+		
+		&-block
+			padding: 20px 10px
+			text-align: center
+			
+		&-title
+			margin-top: 0
+			font-size: 22px
+		&-text
+			margin-bottom: 0
+		&-call
+			display: none
+
+
+	.form
+		&-range
+			&-title
+				font-size: 22px
+			&-label
+				display: block
+				width: 100%
+				max-width: 400px
+				margin: 30px auto 40px
+			&-input
+				width: 100px
+				font-size: 1.125rem
+			&-min, &-max, &-val
+				font-size: 12px
+			&-min, &-max
+				bottom: -8px
+
+		&-period-select
+			width: 100%
+			max-width: 400px
+			margin: 0 auto
+
+		&-block
+			max-width: 400px
+			padding: 40px 0
+			&-row
+				margin: 0
+			&-item
+				padding: 0
+			&-label
+				font-size: 1rem
+			&-input
+				height: 40px
+				font-size: 18px
+			&-sm-item12
+				width: 100%
+				margin-bottom: 15px
+				padding: 0!important
+				float: none
+				clear: both
+			&-sm-item7
+				width: 58.333333%
+				padding: 0!important
+			&-sm-item5
+				width: 41.666667%
+				padding: 0 0 0 15px!important
+			&-docs
+				display: block
+				margin-bottom: 30px
+			&-doc1, &-doc2
+				display: block
+				margin: 10px 0
+			&-button
+				width: 100%
+				height: 40px
+				margin-left: auto
+				font-size: 13px
+
+		.my-select-trigger
+			height: 40px
+			font-size: 1rem
+			line-height: 1rem
+
+	.privacy
+		.checkbox-text
+			margin-left: 10px
+			font-size: 16px
+	.checkbox 
+		.checkbox-wrap
+			width: 22px
+			height: 22px
+		.checkbox-check
+			top: 3px
+			left: 2px
+	.mb-sm-0
+		margin-bottom: 0
+
+
+	.how
+		padding-bottom: 25px
+	.how-title
+		font-size: 22px
+	.how-img-wrap
+		width: 100%
+	.how-list-item
+		display: block
+		width: 100%
+		max-width: 320px
+		margin: 0 auto 30px
+		float: none
+	.how-img
+		max-width: 65%
+		margin: 0 auto
+	.how-img-text
+		max-width: 320px
+
+
+	.feedbacks-title
+		margin-bottom: 50px
+		font-size: 22px
+	.feedbacks-item
+		float: none
+		width: 100%
+		max-width: 400px
+		margin: 0 auto 2rem !important
+	.feedbacks-item-title
+		font-size: 1rem
+
+
+
+	.footer
+		padding: 3.5rem 0 2.5rem
+
 	/**/
 
 
 @media only screen and (max-width : 575px)
+	.header-logo-text
+		font-size: 2rem
+	.header-logo-descr
+		font-size: .9rem
+	.header-nav-bar
+		top: 21px
 
 	/**/
 
 
 @media only screen and (max-width : 480px)
 
+	.sm-hidden
+		display: none
+		
 	/**/
 
+@media only screen and (max-width : 380px)
 
+	.form
+		&-range
+			&-input
+				width: 85px
+				font-size: 1rem
+			&-min, &-max, &-val
+				font-size: 10px
+
+	.privacy
+		.checkbox-text
+			margin-left: 10px
+			font-size: 13px
+
+	/**/
 
 @media only screen and (max-width : 320px)
 
@@ -35,36 +403,25 @@
 
 
 
+@media (min-width: 576px)
+	.container 
+		max-width: 540px
 
+@media (min-width: 768px)
+	.container 
+		max-width: 720px
 
-// @media only screen and (min-width : 320px)
+@media (min-width: 992px)
+	.container 
+		max-width: 960px
 
-// 	/**/
-
-
-
-// @media only screen and (min-width : 480px)
-
-// 	/**/
-
-
-// @media only screen and (min-width : 576px)
-
-// 	/**/
-
-
-// @media only screen and (min-width : 768px)
-
-// 	/**/
+@media (min-width: 1200px)
+	.container 
+		max-width: 1200px
 
 
 
-// @media only screen and (min-width : 992px)
-
-// 	/**/
 
 
-
-// @media only screen and (min-width : 1200px)
 
 // 	/**/

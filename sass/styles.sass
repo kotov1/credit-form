@@ -49,6 +49,16 @@ body
 	background-color: #fff
 	overflow-x: hidden
 
+.container
+	width: 100%
+	margin: 0 auto
+	padding: 0 12px
+	&::before, &::after
+		content: ' '
+		display: table
+	&::after
+		clear: both
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -116,7 +126,7 @@ span.fix-render
 		left: 4px
 		stroke: #fff
 		stroke-dasharray: 19px
-		stroke-dashoffset: 19px
+		stroke-dashoffset: 20px
 		transition: .2s ease-out
 
 	.checkbox-text
@@ -147,21 +157,24 @@ span.fix-render
 		.checkbox-text
 			color: #199b40
 
+.mfp-close
+	top: 5px
+	right: 5px
+	width: 28px
+	height: 28px
+	line-height: 28px
+	background: url('../img/close.png') no-repeat 50% 50%
+	background-size: 100%
+	&:hover
+		cursor: pointer
+	&:active
+		top: 4px
+
 /*GENERAL STYLES END*/
 
 
+
 /*STYLES START*/
-.container
-	width: 1200px
-	margin: 0 auto
-	padding: 0 12px
-	&::before, &::after
-		content: ' '
-		display: table
-	&::after
-		clear: both
-
-
 
 /* HEADER STYLES START */
 .header
@@ -362,19 +375,20 @@ span.fix-render
 
 		&-min, &-val, &-max
 			position: absolute
-			bottom: -10px
-			font: 1rem $bold-font-family
+			font: .8rem $bold-font-family
 			.fix-render
 				font: 1.5em $black-font-family
 		&-min, &-max
+			bottom: -3px
 			color: $accent-color
 		&-min
 			left: 0
 		&-max
 			right: 0
 		&-val
+			bottom: -10px
 			left: 50%
-			transform: translateX(-50%)
+			transform: translateX(-42%)
 			color: $sub-color
 
 	&-period-select
@@ -573,8 +587,10 @@ span.fix-render
 		&:active
 			color: #fff
 
-.input-code-info
-	font: 14px $book-font-family
+.input-code
+	margin-top: 20px
+	&-info
+		font: 14px $book-font-family
 #input-code
 	display: none
 .form
@@ -582,6 +598,7 @@ span.fix-render
 		color: rgba($sub-color, .5)
 
 .form-submit-wrap
+	margin-top: 45px
 	text-align: center
 .form-submit
 	display: inline-block
@@ -620,8 +637,11 @@ span.fix-render
 	color: #fff
 	text-transform: uppercase
 	&-item1
+		position: relative
+		left: -38%
 		width: 62%
 	&-title
+		width: 62%
 		font: 2.875rem $black-font-family // 46/16
 		text-align: center
 	&-list
@@ -679,11 +699,13 @@ span.fix-render
 		text-align: center
 
 	&-item2
+		position: relative
+		left:  62%
 		width: 31%
 		margin-left: 7%
 	&-img
 		&-wrap
-			margin: 50px auto 0
+			margin: 0 auto
 			width: 361px
 			height: 454px
 			text-align: center
@@ -773,8 +795,33 @@ span.fix-render
 	margin-bottom: .5rem
 .company-address
 	font-style: normal
-	
 /* FOOTER STYLES END */
+
+
+
+/* Modal STYLES START */
+.modal-wrap
+	max-width: 480px
+	margin: 0 auto
+	background-color: #fff
+	border-radius: 5px
+	border: 3px solid $accent-color
+.modal
+	position: relative
+	padding: 30px 20px 20px
+	text-align: center
+	text-transform: uppercase
+	&-title
+		font: 32px $black-font-family
+	&-info
+		font: 20px $bold-font-family
+		&-num
+			display: block
+			padding: 5px 0
+	&-text
+		font: 16px $medium-font-family
+		color: $sub-color
+/* Modal STYLES END */
 
 
 
